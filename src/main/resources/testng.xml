@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="TestAll">
+
+    <suite-files>
+        <suite-file path="me2Test/mizhuTest.xml"/>
+    </suite-files>
+    <suite-files>
+        <suite-file path="me2Test/mizhumanageTest.xml"/>
+    </suite-files>
+    <suite-files>
+        <suite-file path="me2Test/flowTest.xml"/>
+    </suite-files>
+
+</suite>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="mizhumanageTest">
+
+    <test name="inter.mizhumanage.web">
+        <groups>
+            <run>
+                <exclude name="database"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="inter.mizhumanage.web.classroom"/>
+            <package name="inter.mizhumanage.web.lesson"/>
+            <package name="inter.mizhumanage.web.usr">
+            </package>
+        </packages>
+    </test>
+
+</suite>
