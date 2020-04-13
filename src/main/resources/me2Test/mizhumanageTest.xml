@@ -11,6 +11,7 @@
         <packages>
             <package name="inter.mizhumanage.web.classroom"/>
             <package name="inter.mizhumanage.web.lesson"/>
+            <package name="inter.mizhumanage.web.qiniu"/>
             <package name="inter.mizhumanage.web.usr">
             </package>
         </packages>

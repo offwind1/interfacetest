@@ -9,6 +9,8 @@
         </groups>
         <packages>
             <package name="inter.flow"/>
+            <package name="inter.flow.answer"/>
+            <package name="inter.flow.item"/>
         </packages>
     </test>
 </suite>

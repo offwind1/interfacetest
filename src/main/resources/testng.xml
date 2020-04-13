@@ -5,11 +5,11 @@
     <suite-files>
         <suite-file path="me2Test/mizhuTest.xml"/>
     </suite-files>
-    <suite-files>
-        <suite-file path="me2Test/mizhumanageTest.xml"/>
-    </suite-files>
-    <suite-files>
-        <suite-file path="me2Test/flowTest.xml"/>
-    </suite-files>
+<!--    <suite-files>-->
+<!--        <suite-file path="me2Test/mizhumanageTest.xml"/>-->
+<!--    </suite-files>-->
+<!--    <suite-files>-->
+<!--        <suite-file path="me2Test/flowTest.xml"/>-->
+<!--    </suite-files>-->
 
 </suite>

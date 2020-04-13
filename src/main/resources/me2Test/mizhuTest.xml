@@ -10,26 +10,32 @@
             </run>
         </groups>
         <packages>
-            <package name="inter.mizhu.api.lessonInfo"/>
+            <!--            <package name="inter.mizhu.api.answer"/>-->
+            <!--            <package name="inter.mizhu.api.classChart"/>-->
+            <!--            <package name="inter.mizhu.api.classInfo"/>-->
+            <!--            <package name="inter.mizhu.api.lessonInfo"/>-->
             <package name="inter.mizhu.api.mobile"/>
         </packages>
     </test>
 
-    <test name="inter.mizhu.web">
-        <groups>
-            <run>
-                <exclude name="database"/>
-            </run>
-        </groups>
+<!--    <test name="inter.mizhu.web">-->
+<!--        <groups>-->
+<!--            <run>-->
+<!--                <exclude name="database"/>-->
+<!--            </run>-->
+<!--        </groups>-->
 
-        <packages>
-            <package name="inter.mizhu.web.classroom"/>
-            <package name="inter.mizhu.web.grade"/>
-            <package name="inter.mizhu.web.lesson"/>
-            <package name="inter.mizhu.web.orgInfo"/>
-            <package name="inter.mizhu.web.refund"/>
-            <package name="inter.mizhu.web.usr"/>
-        </packages>
-    </test>
+<!--        <packages>-->
+<!--            <package name="inter.mizhu.web.answer"/>-->
+<!--            <package name="inter.mizhu.web.classroom"/>-->
+<!--            <package name="inter.mizhu.web.course"/>-->
+<!--            <package name="inter.mizhu.web.grade"/>-->
+<!--            <package name="inter.mizhu.web.item"/>-->
+<!--            <package name="inter.mizhu.web.lesson"/>-->
+<!--            <package name="inter.mizhu.web.orgInfo"/>-->
+<!--            <package name="inter.mizhu.web.refund"/>-->
+<!--            <package name="inter.mizhu.web.usr"/>-->
+<!--        </packages>-->
+<!--    </test>-->
 
 </suite>
