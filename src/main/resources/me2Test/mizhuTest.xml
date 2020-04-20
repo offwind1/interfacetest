@@ -1,41 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-<suite name="mizhuTest">
+<suite name="mizhu服务测试">
 
-
-    <test name="inter.mizhu.api">
+    <test name="cn.vr168.interfacetest.inter.mizhu.api">
         <groups>
             <run>
                 <exclude name="database"/>
             </run>
         </groups>
         <packages>
-            <!--            <package name="inter.mizhu.api.answer"/>-->
-            <!--            <package name="inter.mizhu.api.classChart"/>-->
-            <!--            <package name="inter.mizhu.api.classInfo"/>-->
-            <!--            <package name="inter.mizhu.api.lessonInfo"/>-->
-            <package name="inter.mizhu.api.mobile"/>
+            <package name="cn.vr168.interfacetest.inter.mizhu.api.answer"/>
+            <package name="cn.vr168.interfacetest.inter.mizhu.api.classChart"/>
+            <package name="cn.vr168.interfacetest.inter.mizhu.api.classInfo"/>
+            <package name="cn.vr168.interfacetest.inter.mizhu.api.lessonInfo"/>
+            <package name="cn.vr168.interfacetest.inter.mizhu.api.mobile"/>
         </packages>
     </test>
 
-<!--    <test name="inter.mizhu.web">-->
-<!--        <groups>-->
-<!--            <run>-->
-<!--                <exclude name="database"/>-->
-<!--            </run>-->
-<!--        </groups>-->
+    <test name="cn.vr168.interfacetest.inter.mizhu.web">
+        <groups>
+            <run>
+                <exclude name="database"/>
+            </run>
+        </groups>
 
-<!--        <packages>-->
-<!--            <package name="inter.mizhu.web.answer"/>-->
-<!--            <package name="inter.mizhu.web.classroom"/>-->
-<!--            <package name="inter.mizhu.web.course"/>-->
-<!--            <package name="inter.mizhu.web.grade"/>-->
-<!--            <package name="inter.mizhu.web.item"/>-->
-<!--            <package name="inter.mizhu.web.lesson"/>-->
-<!--            <package name="inter.mizhu.web.orgInfo"/>-->
-<!--            <package name="inter.mizhu.web.refund"/>-->
-<!--            <package name="inter.mizhu.web.usr"/>-->
-<!--        </packages>-->
-<!--    </test>-->
+        <packages>
+            <package name="cn.vr168.interfacetest.inter.mizhu.web.answer"/>
+            <package name="cn.vr168.interfacetest.inter.mizhu.web.classroom"/>
+            <package name="cn.vr168.interfacetest.inter.mizhu.web.course"/>
+            <package name="cn.vr168.interfacetest.inter.mizhu.web.grade"/>
+            <package name="cn.vr168.interfacetest.inter.mizhu.web.item"/>
+            <package name="cn.vr168.interfacetest.inter.mizhu.web.lesson"/>
+            <package name="cn.vr168.interfacetest.inter.mizhu.web.orgInfo"/>
+            <package name="cn.vr168.interfacetest.inter.mizhu.web.refund"/>
+            <package name="cn.vr168.interfacetest.inter.mizhu.web.usr"/>
+        </packages>
+    </test>
 
 </suite>

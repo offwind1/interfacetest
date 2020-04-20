@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-<suite name="mizhumanageTest">
+<suite name="mizhumanage服务测试">
 
-    <test name="inter.mizhumanage.web">
+    <test name="cn.vr168.interfacetest.inter.mizhumanage.web">
         <groups>
             <run>
                 <exclude name="database"/>
             </run>
         </groups>
         <packages>
-            <package name="inter.mizhumanage.web.classroom"/>
-            <package name="inter.mizhumanage.web.lesson"/>
-            <package name="inter.mizhumanage.web.qiniu"/>
-            <package name="inter.mizhumanage.web.usr">
+            <package name="cn.vr168.interfacetest.inter.mizhumanage.web.classroom"/>
+            <package name="cn.vr168.interfacetest.inter.mizhumanage.web.lesson"/>
+            <package name="cn.vr168.interfacetest.inter.mizhumanage.web.qiniu"/>
+            <package name="cn.vr168.interfacetest.inter.mizhumanage.web.usr">
             </package>
         </packages>
     </test>
