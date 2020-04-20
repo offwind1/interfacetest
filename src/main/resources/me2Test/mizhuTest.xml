@@ -12,6 +12,7 @@
             <package name="cn.vr168.interfacetest.inter.mizhu.api.answer"/>
             <package name="cn.vr168.interfacetest.inter.mizhu.api.classChart"/>
             <package name="cn.vr168.interfacetest.inter.mizhu.api.classInfo"/>
+            <package name="cn.vr168.interfacetest.inter.mizhu.api.course"/>
             <package name="cn.vr168.interfacetest.inter.mizhu.api.lessonInfo"/>
             <package name="cn.vr168.interfacetest.inter.mizhu.api.mobile"/>
         </packages>
@@ -32,6 +33,7 @@
             <package name="cn.vr168.interfacetest.inter.mizhu.web.item"/>
             <package name="cn.vr168.interfacetest.inter.mizhu.web.lesson"/>
             <package name="cn.vr168.interfacetest.inter.mizhu.web.orgInfo"/>
+            <package name="cn.vr168.interfacetest.inter.mizhu.web.qiniu"/>
             <package name="cn.vr168.interfacetest.inter.mizhu.web.refund"/>
             <package name="cn.vr168.interfacetest.inter.mizhu.web.usr"/>
         </packages>

@@ -8,10 +8,13 @@
             </run>
         </groups>
         <packages>
-            <package name="cn.vr168.interfacetest.inter.flow.answer"/>
             <package name="cn.vr168.interfacetest.inter.flow"/>
-            <package name="cn.vr168.interfacetest.inter.flow.lessonManage"/>
+            <package name="cn.vr168.interfacetest.inter.flow.answer"/>
+            <package name="cn.vr168.interfacetest.inter.flow.classManage"/>
             <package name="cn.vr168.interfacetest.inter.flow.item"/>
+            <package name="cn.vr168.interfacetest.inter.flow.lessonManage"/>
+            <package name="cn.vr168.interfacetest.inter.flow.studentManage"/>
+            <package name="cn.vr168.interfacetest.inter.flow.teacherManage"/>
         </packages>
     </test>
 </suite>
