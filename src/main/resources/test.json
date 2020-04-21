@@ -1,36 +1,85 @@
 {
+  "msg": "",
   "code": "200",
   "data": {
+    "ttcount": 1,
     "list": [
       {
-        "account": "tester",
-        "content": "加入，2020-04-20 14:20:04离开",
-        "detail": "0.0833分钟",
-        "nickname": "机器人专用账号",
-        "operation": "时长",
-        "time": "2020-04-20 14:19:59.0",
-        "userId": "4486394474761216"
+        "account": "baby0001",
+        "amountNum": "10.00",
+        "courseList": [],
+        "createTime": "2020-04-21 14:02:59",
+        "lessonList": [],
+        "nickname": "新生娃0001",
+        "orgId": 8445,
+        "orgMsgList": [],
+        "orgRelList": [],
+        "times": 0,
+        "userId": "4867050961636352",
+        "userIds": [],
+        "userOrgList": []
       },
       {
-        "account": "tester",
-        "content": "课程[新建课程cqphy3],课节[课时1],调用系列课程开课!",
-        "detail": "3--PC",
-        "nickname": "机器人专用账号",
-        "operation": "做什么",
-        "time": "2020-04-20 14:20:00.0",
-        "userId": "4486394474761216"
+        "account": "baby0002",
+        "amountNum": "10.00",
+        "courseList": [],
+        "createTime": "2020-04-21 14:02:59",
+        "lessonList": [],
+        "nickname": "新生娃0002",
+        "orgId": 8445,
+        "orgMsgList": [],
+        "orgRelList": [],
+        "times": 0,
+        "userId": "4867050963569664",
+        "userIds": [],
+        "userOrgList": []
       },
       {
-        "account": "tester",
-        "content": "课程[新建课程cqphy3],课节[课时1],调用课堂结束!",
-        "detail": "3--PC",
-        "nickname": "机器人专用账号",
-        "operation": "做什么",
-        "time": "2020-04-20 14:20:04.0",
-        "userId": "4486394474761216"
+        "account": "baby0003",
+        "amountNum": "10.00",
+        "courseList": [],
+        "createTime": "2020-04-21 14:02:59",
+        "lessonList": [],
+        "nickname": "新生娃0003",
+        "orgId": 8445,
+        "orgMsgList": [],
+        "orgRelList": [],
+        "times": 0,
+        "userId": "4867050965519360",
+        "userIds": [],
+        "userOrgList": []
+      },
+      {
+        "account": "baby0004",
+        "amountNum": "10.00",
+        "courseList": [],
+        "createTime": "2020-04-21 14:02:59",
+        "lessonList": [],
+        "nickname": "新生娃0004",
+        "orgId": 8445,
+        "orgMsgList": [],
+        "orgRelList": [],
+        "times": 0,
+        "userId": "4867050967436288",
+        "userIds": [],
+        "userOrgList": []
+      },
+      {
+        "account": "baby0005",
+        "amountNum": "10.00",
+        "courseList": [],
+        "createTime": "2020-04-21 14:02:59",
+        "lessonList": [],
+        "nickname": "新生娃0005",
+        "orgId": 8445,
+        "orgMsgList": [],
+        "orgRelList": [],
+        "times": 0,
+        "userId": "4867050969369600",
+        "userIds": [],
+        "userOrgList": []
       }
     ]
   },
-  "msg": "",
-  "token": "FD56D0EA-7A8A-4D1C-A6B8-CE61190BC586"
+  "token": "2CB43885-6DAB-4A0C-B484-674121C26A4E"
 }

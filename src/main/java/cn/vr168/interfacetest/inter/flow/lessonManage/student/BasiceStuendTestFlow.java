@@ -20,6 +20,7 @@ import io.qameta.allure.Step;
 import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
@@ -29,9 +30,14 @@ import java.util.stream.Collectors;
 
 public class BasiceStuendTestFlow {
 
-    private Lesson lesson = LessonFactory.creat();
-    private Clazz clazz = ClassFactory.findClass();
+    private Lesson lesson;
+    private Clazz clazz;
 
+    @BeforeClass
+    public void beforeClass() {
+        lesson = LessonFactory.creat();
+        clazz = ClassFactory.findClass();
+    }
 
     public Set<String> lessonStudent(Lesson lesson, String key) {
         JSONObject lessonStudent = LessonStudent.of().lessonStudent(Jigou.getInstance().getToken(), lesson.getLessonId());

@@ -11,6 +11,8 @@ import cn.vr168.interfacetest.parameter.people.Jigou;
 import cn.vr168.interfacetest.kit.excelCreator.LessonNeedClassroomExcelCreator;
 import cn.vr168.interfacetest.kit.util.SampleAssert;
 
+import java.io.IOException;
+
 @RequiredArgsConstructor(staticName = "of")
 public class LessonUpfile extends BasicsInterface {
 
@@ -25,7 +27,7 @@ public class LessonUpfile extends BasicsInterface {
     }
 
     @Test
-    public void test() {
+    public void test() throws IOException {
         byte[] bytes = LessonNeedClassroomExcelCreator.of().addLesson(LessonNeedClassroomExcelCreator.Bean.builder()
                 .lessonName("测试课程")
                 .startDate(DateUtil.date())

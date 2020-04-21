@@ -25,7 +25,6 @@ public class GetLessonInfoById extends BasicsInterface {
         JSONObject jsonObject = getLessonInfoById(Teacher.getInstance().getToken(),
                 LessonFactory.takeOut().getLessonId());
         assert jsonObject.getStr("code").equals("200");
-        assert jsonObject.getJSONObject("data").getJSONArray("classroomList").size() == 1;
     }
 
     @Test(description = "token为空")

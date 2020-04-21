@@ -6,7 +6,7 @@ import cn.hutool.core.util.RandomUtil;
 import cn.hutool.json.JSONArray;
 import cn.hutool.json.JSONObject;
 import cn.vr168.interfacetest.inter.mizhu.web.lesson.*;
-import cn.vr168.interfacetest.inter.mizhumanage.web.classroom.Delete;
+import cn.vr168.interfacetest.inter.mizhu.web.classroom.Delete;
 import cn.vr168.interfacetest.inter.mizhumanage.web.lesson.LessonReply;
 import cn.vr168.interfacetest.parameter.people.Admin;
 import cn.vr168.interfacetest.parameter.people.Jigou;

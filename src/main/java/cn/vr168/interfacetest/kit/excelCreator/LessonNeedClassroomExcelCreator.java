@@ -78,9 +78,9 @@ public class LessonNeedClassroomExcelCreator extends ExcelCreator {
             cell = row.createCell(2);
             cell.setCellValue(DateUtil.offsetDay(bean.startDate, i).toString("yyyy-MM-dd"));
             cell = row.createCell(3);
-            cell.setCellValue(bean.startDate.toString("hh:mm"));
+            cell.setCellValue(bean.startDate.toString("HH:mm"));
             cell = row.createCell(4);
-            cell.setCellValue(DateUtil.offsetHour(bean.startDate, 1).toString("hh:mm"));
+            cell.setCellValue(DateUtil.offsetHour(bean.startDate, 1).toString("HH:mm"));
             cell = row.createCell(5);
             cell.setCellValue(bean.getSubjectName());
             cell = row.createCell(6);

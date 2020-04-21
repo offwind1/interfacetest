@@ -1,4 +1,4 @@
-package cn.vr168.interfacetest.inter.mizhumanage.web.classroom;
+package cn.vr168.interfacetest.inter.mizhu.web.classroom;
 
 import cn.hutool.json.JSONObject;
 import cn.vr168.interfacetest.inter.BasicsInterface;
