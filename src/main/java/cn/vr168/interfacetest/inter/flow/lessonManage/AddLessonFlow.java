@@ -11,12 +11,11 @@ import cn.vr168.interfacetest.inter.mizhu.web.lesson.GetLessonInfoById;
 import cn.vr168.interfacetest.inter.mizhu.web.lesson.List;
 import cn.vr168.interfacetest.inter.mizhumanage.web.lesson.AddByFile;
 import cn.vr168.interfacetest.inter.mizhumanage.web.lesson.LessonUpfile;
-import cn.vr168.interfacetest.parameter.Lesson;
 import org.testng.annotations.Test;
 import cn.vr168.interfacetest.parameter.people.Jigou;
 import cn.vr168.interfacetest.parameter.people.User;
-import cn.vr168.interfacetest.util.LessonNeedClassroomExcelCreator;
-import cn.vr168.interfacetest.util.SampleAssert;
+import cn.vr168.interfacetest.kit.excelCreator.LessonNeedClassroomExcelCreator;
+import cn.vr168.interfacetest.kit.util.SampleAssert;
 
 import java.io.IOException;
 import java.util.ArrayList;

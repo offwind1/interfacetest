@@ -1,6 +1,6 @@
 package cn.vr168.interfacetest.config;
 
-import cn.vr168.interfacetest.util.JsonProperties;
+import cn.vr168.interfacetest.kit.util.JsonProperties;
 
 import java.io.IOException;
 import java.io.InputStream;

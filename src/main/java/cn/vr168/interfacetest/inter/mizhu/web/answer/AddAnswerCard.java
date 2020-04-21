@@ -11,9 +11,9 @@ import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.testng.annotations.Test;
 import cn.vr168.interfacetest.parameter.Lesson;
-import cn.vr168.interfacetest.parameter.LessonStore;
+import cn.vr168.interfacetest.kit.factory.LessonFactory;
 import cn.vr168.interfacetest.parameter.people.Jigou;
-import cn.vr168.interfacetest.util.SampleAssert;
+import cn.vr168.interfacetest.kit.util.SampleAssert;
 
 import java.util.Map;
 
@@ -87,7 +87,7 @@ public class AddAnswerCard extends BasicsInterface {
 
     @Test
     public void test() {
-        Lesson lesson = LessonStore.takeOut();
+        Lesson lesson = LessonFactory.takeOut();
 
         JSONObject object = addAnswerCard(Bean.builder()
                 .token(Jigou.getInstance().getToken())

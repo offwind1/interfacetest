@@ -6,7 +6,7 @@ import io.qameta.allure.Step;
 import lombok.Builder;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
-import cn.vr168.interfacetest.util.Body;
+import cn.vr168.interfacetest.kit.util.Body;
 
 //@Log4j
 @RequiredArgsConstructor(staticName = "of")

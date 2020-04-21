@@ -13,7 +13,6 @@ import cn.vr168.interfacetest.inter.mizhu.web.grade.AddClass;
 import cn.vr168.interfacetest.inter.mizhu.web.grade.DelClass;
 import cn.vr168.interfacetest.inter.mizhu.web.lesson.JoinClassByFile;
 import cn.vr168.interfacetest.inter.mizhu.web.lesson.UploadFile;
-import cn.vr168.interfacetest.util.ExcelCreator;
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
@@ -24,8 +23,8 @@ import cn.vr168.interfacetest.parameter.Lesson;
 import cn.vr168.interfacetest.parameter.people.Jigou;
 import cn.vr168.interfacetest.parameter.people.Student;
 import cn.vr168.interfacetest.parameter.people.User;
-import cn.vr168.interfacetest.util.SampleAssert;
-import cn.vr168.interfacetest.util.StudentExcelCreator;
+import cn.vr168.interfacetest.kit.util.SampleAssert;
+import cn.vr168.interfacetest.kit.excelCreator.StudentExcelCreator;
 
 import java.io.IOException;
 import java.util.*;
@@ -82,7 +81,7 @@ public class AttendanceFlow {
         JSONObject classroomStart = ClassroomStart.of().classroomStart(user.getToken(), lesson.getClassRoom(0).getClassroomId());
         classroomVideoId = classroomStart.getJSONObject("data").getStr("classroomVideoId");
         teacherCloudeAccount = classroomStart.getJSONObject("data").getJSONObject("classroomInfo").getStr("teacherCloudeAccount");
-
+        SampleAssert.assertMsg(classroomStart, "开课成功");
         return classroomStart.getJSONObject("data").getJSONObject("classroomInfo").getStr("classroomCode");
     }
 

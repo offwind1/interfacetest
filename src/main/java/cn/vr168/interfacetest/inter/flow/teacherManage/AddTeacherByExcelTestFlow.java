@@ -7,9 +7,9 @@ import cn.vr168.interfacetest.inter.kaca.school.clazz.manage.creat.Excel;
 import cn.vr168.interfacetest.inter.mizhu.web.usr.OrgDelTeacher;
 import cn.vr168.interfacetest.inter.mizhu.web.usr.OrgTeacherInfo;
 import cn.vr168.interfacetest.parameter.people.Jigou;
-import cn.vr168.interfacetest.page.ManagePage;
-import cn.vr168.interfacetest.util.SampleAssert;
-import cn.vr168.interfacetest.util.TeacherExcelCreator;
+import cn.vr168.interfacetest.kit.page.ManagePage;
+import cn.vr168.interfacetest.kit.util.SampleAssert;
+import cn.vr168.interfacetest.kit.excelCreator.TeacherExcelCreator;
 import org.testng.annotations.Test;
 
 import java.util.HashSet;

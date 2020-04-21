@@ -5,7 +5,7 @@ import cn.vr168.interfacetest.inter.BasicsInterface;
 import io.qameta.allure.Step;
 import lombok.RequiredArgsConstructor;
 import cn.vr168.interfacetest.parameter.people.User;
-import cn.vr168.interfacetest.util.Body;
+import cn.vr168.interfacetest.kit.util.Body;
 
 @RequiredArgsConstructor(staticName = "of")
 public class ClassroomCodeAddUser extends BasicsInterface {

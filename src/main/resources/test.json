@@ -1,1 +1,36 @@
-<html><body><h1>Whitelabel Error Page</h1><p>This application has no explicit mapping for /error, so you are seeing this as a fallback.</p><div id='created'>Wed Apr 15 14: 11: 14 CST 2020</div><div>There was an unexpected error (type=Internal Server Error, status=500).</div><div>Request processing failed; nested exception is com.iShift.kachaCommon.expcetion.ServiceException: ??????: ????????</div></body></html>
+{
+  "code": "200",
+  "data": {
+    "list": [
+      {
+        "account": "tester",
+        "content": "加入，2020-04-20 14:20:04离开",
+        "detail": "0.0833分钟",
+        "nickname": "机器人专用账号",
+        "operation": "时长",
+        "time": "2020-04-20 14:19:59.0",
+        "userId": "4486394474761216"
+      },
+      {
+        "account": "tester",
+        "content": "课程[新建课程cqphy3],课节[课时1],调用系列课程开课!",
+        "detail": "3--PC",
+        "nickname": "机器人专用账号",
+        "operation": "做什么",
+        "time": "2020-04-20 14:20:00.0",
+        "userId": "4486394474761216"
+      },
+      {
+        "account": "tester",
+        "content": "课程[新建课程cqphy3],课节[课时1],调用课堂结束!",
+        "detail": "3--PC",
+        "nickname": "机器人专用账号",
+        "operation": "做什么",
+        "time": "2020-04-20 14:20:04.0",
+        "userId": "4486394474761216"
+      }
+    ]
+  },
+  "msg": "",
+  "token": "FD56D0EA-7A8A-4D1C-A6B8-CE61190BC586"
+}

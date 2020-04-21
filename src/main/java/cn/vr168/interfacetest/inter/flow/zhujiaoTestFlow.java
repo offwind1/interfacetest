@@ -5,7 +5,7 @@ import cn.vr168.interfacetest.inter.mizhu.api.classInfo.RoomToday;
 import cn.vr168.interfacetest.inter.mizhu.api.classInfo.WeekRoom;
 import org.testng.annotations.Test;
 import cn.vr168.interfacetest.parameter.Lesson;
-import cn.vr168.interfacetest.parameter.LessonStore;
+import cn.vr168.interfacetest.kit.factory.LessonFactory;
 import cn.vr168.interfacetest.parameter.people.Teacher;
 
 public class zhujiaoTestFlow {
@@ -23,7 +23,7 @@ public class zhujiaoTestFlow {
      */
     @Test(description = "课堂在每个老师的系列课程中都能打开")
     public void test() {
-        Lesson lesson = LessonStore.takeOut();
+        Lesson lesson = LessonFactory.takeOut();
         JSONObject roomToday = RoomToday.of().roomToday(Teacher.getInstance().getToken());
         JSONObject weekRoom = WeekRoom.of().weekRoom(Teacher.getInstance().getToken(), "2", "0");
     }

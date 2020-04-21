@@ -7,7 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.testng.annotations.Test;
 import cn.vr168.interfacetest.parameter.people.HasToken;
 import cn.vr168.interfacetest.parameter.people.Student;
-import cn.vr168.interfacetest.util.Body;
+import cn.vr168.interfacetest.kit.util.Body;
 
 @RequiredArgsConstructor(staticName = "of")
 public class MyLesson extends BasicsInterface {

@@ -3,7 +3,7 @@ package cn.vr168.interfacetest.inter.mizhu.web.orgInfo;
 import cn.hutool.json.JSONObject;
 import cn.vr168.interfacetest.inter.BasicsInterface;
 import cn.vr168.interfacetest.parameter.people.User;
-import cn.vr168.interfacetest.util.Body;
+import cn.vr168.interfacetest.kit.util.Body;
 import io.qameta.allure.Step;
 import lombok.RequiredArgsConstructor;
 

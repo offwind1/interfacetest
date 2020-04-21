@@ -9,13 +9,12 @@ import cn.vr168.interfacetest.inter.mizhu.web.orgInfo.AddTeacher;
 import cn.vr168.interfacetest.inter.mizhu.web.usr.CheckTeacher;
 import cn.vr168.interfacetest.inter.mizhu.web.usr.OrgDelTeacher;
 import cn.vr168.interfacetest.inter.mizhu.web.usr.OrgTeacherInfo;
-import cn.vr168.interfacetest.page.ManagePage;
-import cn.vr168.interfacetest.parameter.people.Student;
+import cn.vr168.interfacetest.kit.page.ManagePage;
 import cn.vr168.interfacetest.parameter.people.Teacher;
 import org.testng.TestException;
 import org.testng.annotations.Test;
 import cn.vr168.interfacetest.parameter.people.Jigou;
-import cn.vr168.interfacetest.util.SampleAssert;
+import cn.vr168.interfacetest.kit.util.SampleAssert;
 
 
 public class AddTeacherFlow {

@@ -3,7 +3,7 @@ package cn.vr168.interfacetest.inter.mizhumanage.web.usr;
 import cn.hutool.json.JSONObject;
 import cn.vr168.interfacetest.inter.BasicsInterface;
 import lombok.RequiredArgsConstructor;
-import cn.vr168.interfacetest.util.Body;
+import cn.vr168.interfacetest.kit.util.Body;
 
 @RequiredArgsConstructor(staticName = "of")
 public class ManageLogin extends BasicsInterface {

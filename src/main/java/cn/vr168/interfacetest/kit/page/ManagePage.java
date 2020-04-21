@@ -1,4 +1,4 @@
-package cn.vr168.interfacetest.page;
+package cn.vr168.interfacetest.kit.page;
 
 import cn.hutool.core.util.RandomUtil;
 import cn.hutool.json.JSONObject;
@@ -7,7 +7,7 @@ import cn.vr168.interfacetest.inter.mizhu.api.mobile.GetUserInfoByPhone;
 import cn.vr168.interfacetest.inter.mizhumanage.web.usr.AccountMerge;
 import cn.vr168.interfacetest.inter.mizhumanage.web.usr.AddNewUser;
 import cn.vr168.interfacetest.parameter.people.Admin;
-import cn.vr168.interfacetest.util.SampleAssert;
+import cn.vr168.interfacetest.kit.util.SampleAssert;
 import org.testng.annotations.Test;
 
 import java.util.Optional;

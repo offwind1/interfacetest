@@ -2,7 +2,7 @@ package cn.vr168.interfacetest.inter.mizhu.api.course;
 
 import cn.hutool.json.JSONObject;
 import cn.vr168.interfacetest.inter.BasicsInterface;
-import cn.vr168.interfacetest.util.Body;
+import cn.vr168.interfacetest.kit.util.Body;
 import io.qameta.allure.Step;
 import lombok.RequiredArgsConstructor;
 

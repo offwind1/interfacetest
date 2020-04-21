@@ -8,8 +8,8 @@ import io.qameta.allure.Step;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j;
 import org.testng.annotations.Test;
-import cn.vr168.interfacetest.util.SampleAssert;
-import cn.vr168.interfacetest.util.TeacherExcelCreator;
+import cn.vr168.interfacetest.kit.util.SampleAssert;
+import cn.vr168.interfacetest.kit.excelCreator.TeacherExcelCreator;
 
 @Log4j
 @RequiredArgsConstructor(staticName = "of")

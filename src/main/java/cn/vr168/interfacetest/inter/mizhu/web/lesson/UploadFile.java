@@ -3,13 +3,12 @@ package cn.vr168.interfacetest.inter.mizhu.web.lesson;
 import cn.hutool.http.HttpRequest;
 import cn.hutool.json.JSONObject;
 import cn.vr168.interfacetest.inter.BasicsInterface;
-import io.qameta.allure.Allure;
 import io.qameta.allure.Step;
 import lombok.RequiredArgsConstructor;
 import org.testng.annotations.Test;
 import cn.vr168.interfacetest.parameter.people.Jigou;
-import cn.vr168.interfacetest.util.SampleAssert;
-import cn.vr168.interfacetest.util.StudentExcelCreator;
+import cn.vr168.interfacetest.kit.util.SampleAssert;
+import cn.vr168.interfacetest.kit.excelCreator.StudentExcelCreator;
 
 @RequiredArgsConstructor(staticName = "of")
 public class UploadFile extends BasicsInterface {

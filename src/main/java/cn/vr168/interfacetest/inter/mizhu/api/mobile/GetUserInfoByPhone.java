@@ -2,8 +2,8 @@ package cn.vr168.interfacetest.inter.mizhu.api.mobile;
 
 import cn.hutool.json.JSONObject;
 import cn.vr168.interfacetest.inter.BasicsInterface;
-import cn.vr168.interfacetest.util.Body;
-import cn.vr168.interfacetest.util.SampleAssert;
+import cn.vr168.interfacetest.kit.util.Body;
+import cn.vr168.interfacetest.kit.util.SampleAssert;
 import io.qameta.allure.Step;
 import lombok.RequiredArgsConstructor;
 import org.testng.annotations.Test;

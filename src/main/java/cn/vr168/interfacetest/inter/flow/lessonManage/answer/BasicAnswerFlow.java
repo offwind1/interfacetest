@@ -1,8 +1,11 @@
-package cn.vr168.interfacetest.inter.flow.answer;
+package cn.vr168.interfacetest.inter.flow.lessonManage.answer;
 
 import cn.hutool.core.util.RandomUtil;
 import cn.hutool.json.JSONArray;
 import cn.hutool.json.JSONObject;
+import cn.vr168.interfacetest.kit.factory.AnswerCardFactory;
+import cn.vr168.interfacetest.kit.factory.ClassFactory;
+import cn.vr168.interfacetest.kit.factory.LessonFactory;
 import cn.vr168.interfacetest.inter.mizhu.api.answer.GetStudentAnswerCard;
 import cn.vr168.interfacetest.inter.mizhu.api.answer.SaveAnswerCard;
 import cn.vr168.interfacetest.inter.mizhu.api.answer.SubmitAnswerCard;
@@ -13,7 +16,7 @@ import cn.vr168.interfacetest.parameter.*;
 import cn.vr168.interfacetest.parameter.people.Jigou;
 import cn.vr168.interfacetest.parameter.people.Student;
 import cn.vr168.interfacetest.parameter.people.User;
-import cn.vr168.interfacetest.util.SampleAssert;
+import cn.vr168.interfacetest.kit.util.SampleAssert;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +24,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 public class BasicAnswerFlow {
-    private Lesson lesson = LessonStore.creat();
+    private Lesson lesson = LessonFactory.creat();
 
     /**
      * 创建答题卡
@@ -143,7 +146,7 @@ public class BasicAnswerFlow {
      */
     @Test
     public void test2() {
-        Lesson lesson = LessonStore.creat();                            //创建课程
+        Lesson lesson = LessonFactory.creat();                            //创建课程
         clazz = ClassFactory.findClass("答题卡专用");                        //创建班级
         String accountFormat = "baby%04d";
         String nameFormat = "新生娃%04d";
@@ -176,6 +179,31 @@ public class BasicAnswerFlow {
             lastCheck(answerCard, student);
         }
     }
+
+    @Test(description = "答题卡发布后，若有学生提交数据，不能修改")
+    public void test3() {
+        Lesson lesson = LessonFactory.takeOut();
+        lesson.addClass(ClassFactory.findClass("答题卡专用").getStuId());
+        AnswerCard answerCard = AnswerCardFactory.creatCard(lesson);
+        Student student = new Student("baby0001", "111111");
+        AnswerCard studentCard = getStudentAnswerCardCheck(student, answerCard, null);
+//        submitAnswerCardCheck(student, studentCard); // 提交答题卡
+        saveAnswerCardCheck(student, studentCard); // 保存答题卡
+
+        //修改答题卡
+        AddAnswerCard.Bean bean = AddAnswerCard.Bean.builder()
+                .objectiveItemCount(10)
+                .subjectiveItemCount(3)
+                .lessonId(lesson.getLessonId())
+                .classroomId(lesson.getClassRoom(0).getClassroomId())
+                .cardName("答题卡" + RandomUtil.randomString(6))
+                .token(Jigou.getInstance().getToken())
+                .build();
+
+        JSONObject updateAnswerCard = UpdateAnswerCard.of().updateAnswerCard(bean, answerCard.getAnswerCardId());
+        SampleAssert.assertMsg(updateAnswerCard, "已经有学生提交答案，本答题卡不允许修改");
+    }
+
 
     private void lastCheck(AnswerCard card, Student student) {
         JSONObject object = GetStudentAnswerCard.of().getStudentAnswerCard(GetStudentAnswerCard.Bean.builder()
@@ -394,6 +422,7 @@ public class BasicAnswerFlow {
 
         List<String> saveAnswerCardCheck = saveAnswerCardCheck(student, studentCard);
         getStudentAnswerCardCheck(student, card, saveAnswerCardCheck);
+
         List<String> submitAnswerCardCheck = submitAnswerCardCheck(student, studentCard);
         getStudentAnswerCardCheck(student, card, submitAnswerCardCheck);
 

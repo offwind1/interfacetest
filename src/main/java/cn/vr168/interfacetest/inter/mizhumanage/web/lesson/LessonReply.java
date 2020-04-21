@@ -5,11 +5,11 @@ import cn.vr168.interfacetest.inter.BasicsInterface;
 import io.qameta.allure.Step;
 import lombok.RequiredArgsConstructor;
 import org.testng.annotations.Test;
-import cn.vr168.interfacetest.parameter.LessonStore;
+import cn.vr168.interfacetest.kit.factory.LessonFactory;
 import cn.vr168.interfacetest.parameter.people.Admin;
 import cn.vr168.interfacetest.parameter.people.HasToken;
-import cn.vr168.interfacetest.util.Body;
-import cn.vr168.interfacetest.util.SampleAssert;
+import cn.vr168.interfacetest.kit.util.Body;
+import cn.vr168.interfacetest.kit.util.SampleAssert;
 
 @RequiredArgsConstructor(staticName = "of")
 public class LessonReply extends BasicsInterface {
@@ -47,13 +47,13 @@ public class LessonReply extends BasicsInterface {
     @Test(description = "正常调用 不通过")
     public void test() {
 
-        JSONObject jsonObject = lessonReplyNoPass(Admin.getInstance(), LessonStore.takeOut().getLessonId());
+        JSONObject jsonObject = lessonReplyNoPass(Admin.getInstance(), LessonFactory.takeOut().getLessonId());
         assert jsonObject.getStr("code").equals("200");
     }
 
     @Test(description = "正常调用 通过")
     public void test1() {
-        JSONObject jsonObject = lessonReplyPass(Admin.getInstance(), LessonStore.takeOut().getLessonId());
+        JSONObject jsonObject = lessonReplyPass(Admin.getInstance(), LessonFactory.takeOut().getLessonId());
         assert jsonObject.getStr("code").equals("200");
     }
 
@@ -64,7 +64,7 @@ public class LessonReply extends BasicsInterface {
             public String getToken() {
                 return "";
             }
-        }, LessonStore.takeOut().getLessonId());
+        }, LessonFactory.takeOut().getLessonId());
         assert jsonObject.getStr("code").equals("300");
         assert jsonObject.getStr("msg").equals("token无效!");
     }
@@ -78,7 +78,7 @@ public class LessonReply extends BasicsInterface {
 
 //    @Test(description = "pubType 为100")
     public void test4() {
-        JSONObject jsonObject = lessonReply(Admin.getInstance(), LessonStore.takeOut().getLessonId(), "100", "");
+        JSONObject jsonObject = lessonReply(Admin.getInstance(), LessonFactory.takeOut().getLessonId(), "100", "");
         SampleAssert.assertCode(jsonObject, "300");
         SampleAssert.assertMsg(jsonObject, "pubType无效!");
     }

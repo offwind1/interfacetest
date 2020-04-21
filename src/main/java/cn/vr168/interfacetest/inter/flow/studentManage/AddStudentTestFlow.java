@@ -3,18 +3,13 @@ package cn.vr168.interfacetest.inter.flow.studentManage;
 import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.json.JSONObject;
 import cn.vr168.interfacetest.config.Environment;
-import cn.vr168.interfacetest.inter.mizhu.api.mobile.UserInfoById;
 import cn.vr168.interfacetest.inter.mizhu.web.orgInfo.AddStudentToOrg;
-import cn.vr168.interfacetest.inter.mizhu.web.orgInfo.OrgStudentList;
 import cn.vr168.interfacetest.inter.mizhu.web.usr.OrgDelTeacher;
-import cn.vr168.interfacetest.inter.mizhu.web.usr.OrgTeacherInfo;
-import cn.vr168.interfacetest.page.StudentPage;
+import cn.vr168.interfacetest.kit.page.StudentPage;
 import cn.vr168.interfacetest.parameter.people.Jigou;
-import cn.vr168.interfacetest.util.SampleAssert;
+import cn.vr168.interfacetest.kit.util.SampleAssert;
 import org.testng.TestException;
 import org.testng.annotations.Test;
-
-import java.util.stream.Collectors;
 
 public class AddStudentTestFlow {
 

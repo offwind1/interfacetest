@@ -1,4 +1,4 @@
-package cn.vr168.interfacetest.util;
+package cn.vr168.interfacetest.kit.util;
 
 import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.db.Db;

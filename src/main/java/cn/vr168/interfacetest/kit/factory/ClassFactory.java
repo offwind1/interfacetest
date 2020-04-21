@@ -1,8 +1,9 @@
-package cn.vr168.interfacetest.parameter;
+package cn.vr168.interfacetest.kit.factory;
 
 import cn.hutool.core.util.RandomUtil;
 import cn.hutool.json.JSONObject;
 import cn.vr168.interfacetest.inter.mizhu.web.grade.ClassList;
+import cn.vr168.interfacetest.parameter.Clazz;
 import cn.vr168.interfacetest.parameter.people.Jigou;
 
 public class ClassFactory {
@@ -23,5 +24,9 @@ public class ClassFactory {
             }
         }
         return creatClass(className);
+    }
+
+    public static Clazz findClass() {
+        return findClass("答题卡专用");
     }
 }

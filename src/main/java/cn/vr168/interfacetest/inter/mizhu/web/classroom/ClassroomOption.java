@@ -5,10 +5,10 @@ import cn.vr168.interfacetest.inter.BasicsInterface;
 import io.qameta.allure.Step;
 import lombok.RequiredArgsConstructor;
 import org.testng.annotations.Test;
-import cn.vr168.interfacetest.parameter.LessonStore;
+import cn.vr168.interfacetest.kit.factory.LessonFactory;
 import cn.vr168.interfacetest.parameter.people.Jigou;
-import cn.vr168.interfacetest.util.Body;
-import cn.vr168.interfacetest.util.SampleAssert;
+import cn.vr168.interfacetest.kit.util.Body;
+import cn.vr168.interfacetest.kit.util.SampleAssert;
 
 @RequiredArgsConstructor(staticName = "of")
 public class ClassroomOption extends BasicsInterface {
@@ -24,7 +24,7 @@ public class ClassroomOption extends BasicsInterface {
     @Test
     public void test() {
         JSONObject jsonObject = classroomOption(Jigou.getInstance().getToken(),
-                LessonStore.getFirstLesson(Jigou.getInstance()).getClassRoom(0).getClassroomId()
+                LessonFactory.getFirstLesson(Jigou.getInstance()).getClassRoom(0).getClassroomId()
         );
         SampleAssert.assertCode200(jsonObject);
     }

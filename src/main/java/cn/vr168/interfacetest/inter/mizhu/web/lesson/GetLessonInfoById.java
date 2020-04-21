@@ -5,9 +5,9 @@ import cn.vr168.interfacetest.inter.BasicsInterface;
 import io.qameta.allure.Step;
 import lombok.RequiredArgsConstructor;
 import org.testng.annotations.Test;
-import cn.vr168.interfacetest.parameter.LessonStore;
+import cn.vr168.interfacetest.kit.factory.LessonFactory;
 import cn.vr168.interfacetest.parameter.people.Teacher;
-import cn.vr168.interfacetest.util.Body;
+import cn.vr168.interfacetest.kit.util.Body;
 
 @RequiredArgsConstructor(staticName = "of")
 public class GetLessonInfoById extends BasicsInterface {
@@ -23,7 +23,7 @@ public class GetLessonInfoById extends BasicsInterface {
     @Test
     public void test() {
         JSONObject jsonObject = getLessonInfoById(Teacher.getInstance().getToken(),
-                LessonStore.takeOut().getLessonId());
+                LessonFactory.takeOut().getLessonId());
         assert jsonObject.getStr("code").equals("200");
         assert jsonObject.getJSONObject("data").getJSONArray("classroomList").size() == 1;
     }
@@ -31,7 +31,7 @@ public class GetLessonInfoById extends BasicsInterface {
     @Test(description = "token为空")
     public void test1() {
         JSONObject jsonObject = getLessonInfoById("",
-                LessonStore.takeOut().getLessonId());
+                LessonFactory.takeOut().getLessonId());
         assert jsonObject.getStr("code").equals("300");
         assert jsonObject.getStr("msg").equals("token无效或参数有误!");
     }

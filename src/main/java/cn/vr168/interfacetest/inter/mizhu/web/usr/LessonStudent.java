@@ -8,9 +8,9 @@ import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.testng.annotations.Test;
 import cn.vr168.interfacetest.parameter.Lesson;
-import cn.vr168.interfacetest.parameter.LessonStore;
+import cn.vr168.interfacetest.kit.factory.LessonFactory;
 import cn.vr168.interfacetest.parameter.people.Jigou;
-import cn.vr168.interfacetest.util.SampleAssert;
+import cn.vr168.interfacetest.kit.util.SampleAssert;
 
 @RequiredArgsConstructor(staticName = "of")
 public class LessonStudent extends BasicsInterface {
@@ -21,7 +21,7 @@ public class LessonStudent extends BasicsInterface {
         private String currentPage;
         private String pageSize;
         private String lessonId;
-        private String account;
+        private String accounts;
         private String token;
     }
 
@@ -45,7 +45,7 @@ public class LessonStudent extends BasicsInterface {
 
     @Test
     public void test() {
-        Lesson lesson = LessonStore.takeOut();
+        Lesson lesson = LessonFactory.takeOut();
         JSONObject object = lessonStudent(Jigou.getInstance().getToken(), lesson.getLessonId());
         SampleAssert.assertCode200(object);
     }

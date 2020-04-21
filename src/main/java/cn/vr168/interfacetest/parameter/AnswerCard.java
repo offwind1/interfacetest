@@ -7,7 +7,7 @@ import cn.vr168.interfacetest.inter.mizhu.web.answer.AddAnswerCard;
 import cn.vr168.interfacetest.inter.mizhu.web.answer.GetAnswerCard;
 import lombok.Data;
 import cn.vr168.interfacetest.parameter.people.Jigou;
-import cn.vr168.interfacetest.util.SampleAssert;
+import cn.vr168.interfacetest.kit.util.SampleAssert;
 
 @Data
 public class AnswerCard {

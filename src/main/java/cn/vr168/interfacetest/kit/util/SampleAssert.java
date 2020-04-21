@@ -1,4 +1,4 @@
-package cn.vr168.interfacetest.util;
+package cn.vr168.interfacetest.kit.util;
 
 import cn.hutool.json.JSONArray;
 import cn.hutool.json.JSONObject;

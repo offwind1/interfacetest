@@ -1,8 +1,7 @@
 package cn.vr168.interfacetest.inter.flow.studentManage;
 
-import cn.vr168.interfacetest.page.StudentPage;
+import cn.vr168.interfacetest.kit.page.StudentPage;
 import cn.vr168.interfacetest.parameter.Clazz;
-import cn.vr168.interfacetest.parameter.people.Student;
 import org.testng.annotations.Test;
 
 /**

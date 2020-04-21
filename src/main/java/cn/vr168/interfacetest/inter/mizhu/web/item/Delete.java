@@ -4,7 +4,7 @@ import cn.hutool.json.JSONObject;
 import cn.vr168.interfacetest.inter.BasicsInterface;
 import io.qameta.allure.Step;
 import lombok.RequiredArgsConstructor;
-import cn.vr168.interfacetest.util.Body;
+import cn.vr168.interfacetest.kit.util.Body;
 
 @RequiredArgsConstructor(staticName = "of")
 public class Delete extends BasicsInterface {

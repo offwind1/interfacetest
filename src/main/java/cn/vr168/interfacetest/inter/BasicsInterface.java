@@ -85,9 +85,33 @@ public abstract class BasicsInterface {
         return JSONUtil.parseObj(response.body());
     }
 
-    private Map<String, Object> _beanToMap(Object bean) throws IllegalAccessException {
+    private Object getValue(Field field, Object bean) throws IllegalAccessException {
+        field.setAccessible(true);
+        if (field.get(bean) != null) {
+            return field.get(bean);
+        }
+        return "";
+    }
+
+    private Map<String, Object> __beanToMap(Object bean) throws IllegalAccessException {
         Map<String, Object> map = new HashMap<>();
 
+        for (Field field : bean.getClass().getFields()) {
+            map.put(field.getName(), getValue(field, bean));
+        }
+
+        for (Field field : bean.getClass().getDeclaredFields()) {
+            if (field.getName().startsWith("_")) {
+                continue;
+            }
+            map.put(field.getName(), getValue(field, bean));
+        }
+        return map;
+    }
+
+
+    private Map<String, Object> _beanToMap(Object bean) throws IllegalAccessException {
+        Map<String, Object> map = new HashMap<>();
         for (Field field : bean.getClass().getDeclaredFields()) {
             field.setAccessible(true);
             if (field.getName().startsWith("_")) {
@@ -105,7 +129,7 @@ public abstract class BasicsInterface {
 
     public Map<String, Object> beanToMap(Object o) {
         try {
-            return _beanToMap(o);
+            return __beanToMap(o);
         } catch (IllegalAccessException e) {
             e.printStackTrace();
             throw new RuntimeException("bean 转换 map 出错");

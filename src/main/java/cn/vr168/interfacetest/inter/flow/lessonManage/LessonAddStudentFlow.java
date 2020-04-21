@@ -8,16 +8,16 @@ import cn.vr168.interfacetest.inter.mizhu.web.grade.AddClass;
 import cn.vr168.interfacetest.inter.mizhu.web.grade.ClassList;
 import cn.vr168.interfacetest.inter.mizhu.web.grade.DelClass;
 import cn.vr168.interfacetest.inter.mizhu.web.grade.UserByStuId;
-import cn.vr168.interfacetest.inter.mizhu.web.item.Delete;
 import cn.vr168.interfacetest.inter.mizhu.web.lesson.*;
 import cn.vr168.interfacetest.inter.mizhu.web.usr.LessonStudent;
+import cn.vr168.interfacetest.kit.excelCreator.StudentExcelCreator;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 import cn.vr168.interfacetest.parameter.Lesson;
-import cn.vr168.interfacetest.parameter.LessonStore;
+import cn.vr168.interfacetest.kit.factory.LessonFactory;
 import cn.vr168.interfacetest.parameter.people.Jigou;
 import cn.vr168.interfacetest.parameter.people.Student;
-import cn.vr168.interfacetest.util.*;
+import cn.vr168.interfacetest.kit.util.*;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -60,7 +60,7 @@ public class LessonAddStudentFlow {
      */
     @Test(description = "通过班级添加学生", groups = {"database", "select"})
     public void test() throws IOException {
-        Lesson lesson = LessonStore.creat();
+        Lesson lesson = LessonFactory.creat();
         List<String> classIds = getClasses(2);
         System.out.println(classIds);
 
@@ -123,7 +123,7 @@ public class LessonAddStudentFlow {
      */
     @Test
     public void test1() throws InterruptedException {
-        Lesson lesson = LessonStore.creat();
+        Lesson lesson = LessonFactory.creat();
         // 新增班级
         JSONObject addClass = AddClass.of().addClass(Jigou.getInstance(), "班级名称" + RandomUtil.randomString(6), "1");
         SampleAssert.assertCode200(addClass);

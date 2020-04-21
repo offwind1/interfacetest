@@ -5,10 +5,10 @@ import cn.vr168.interfacetest.inter.BasicsInterface;
 import io.qameta.allure.Step;
 import lombok.RequiredArgsConstructor;
 import org.testng.annotations.Test;
-import cn.vr168.interfacetest.parameter.LessonStore;
+import cn.vr168.interfacetest.kit.factory.LessonFactory;
 import cn.vr168.interfacetest.parameter.people.Jigou;
 import cn.vr168.interfacetest.parameter.people.Teacher;
-import cn.vr168.interfacetest.util.Body;
+import cn.vr168.interfacetest.kit.util.Body;
 
 @RequiredArgsConstructor(staticName = "of")
 public class SetTeacher extends BasicsInterface {
@@ -26,7 +26,7 @@ public class SetTeacher extends BasicsInterface {
     public void test() {
         JSONObject jsonObject = setTeacher(Jigou.getInstance().getToken(),
                 Teacher.getInstance().getUserId(),
-                LessonStore.takeOut().getLessonId()
+                LessonFactory.takeOut().getLessonId()
         );
 
 

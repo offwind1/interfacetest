@@ -1,15 +1,16 @@
-package cn.vr168.interfacetest.parameter;
+package cn.vr168.interfacetest.kit.factory;
 
 import cn.hutool.core.util.RandomUtil;
 import cn.hutool.json.JSONArray;
 import cn.hutool.json.JSONObject;
 import cn.vr168.interfacetest.inter.mizhu.web.lesson.List;
+import cn.vr168.interfacetest.parameter.Lesson;
 import cn.vr168.interfacetest.parameter.people.Jigou;
 import cn.vr168.interfacetest.parameter.people.User;
 
 import java.util.ArrayList;
 
-public class LessonStore {
+public class LessonFactory {
     private static Lesson lesson = null;
 
     public static Lesson takeOut() {
@@ -28,7 +29,7 @@ public class LessonStore {
     }
 
     public static Lesson putIn(Lesson lesson) {
-        return LessonStore.lesson = lesson;
+        return LessonFactory.lesson = lesson;
     }
 
     public static Lesson putIn(Lesson.LessonBuilder builder) {

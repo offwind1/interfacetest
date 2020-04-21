@@ -7,9 +7,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.testng.annotations.Test;
-import cn.vr168.interfacetest.parameter.LessonStore;
+import cn.vr168.interfacetest.kit.factory.LessonFactory;
 import cn.vr168.interfacetest.parameter.people.Jigou;
-import cn.vr168.interfacetest.util.SampleAssert;
+import cn.vr168.interfacetest.kit.util.SampleAssert;
 
 @RequiredArgsConstructor(staticName = "of")
 public class GetTeacherList extends BasicsInterface {
@@ -43,15 +43,15 @@ public class GetTeacherList extends BasicsInterface {
     @Test(description = "正常调用")
     public void test() {
         JSONObject jsonObject = getTeacherList(Jigou.getInstance().getToken(),
-                LessonStore.takeOut().getLessonId());
+                LessonFactory.takeOut().getLessonId());
         SampleAssert.assertResult0(jsonObject);
     }
 
     @Test(description = "正常调用2")
     public void test1() {
         JSONObject jsonObject = getTeacherList(Jigou.getInstance().getToken(),
-                LessonStore.takeOut().getLessonId(),
-                LessonStore.takeOut().getClassRoom(0).getClassroomId());
+                LessonFactory.takeOut().getLessonId(),
+                LessonFactory.takeOut().getClassRoom(0).getClassroomId());
         SampleAssert.assertResult0(jsonObject);
     }
 

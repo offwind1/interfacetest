@@ -11,8 +11,8 @@ import cn.vr168.interfacetest.inter.mizhu.web.lesson.JoinClassByFile;
 import cn.vr168.interfacetest.inter.mizhu.web.lesson.UploadFile;
 import lombok.Data;
 import cn.vr168.interfacetest.parameter.people.Jigou;
-import cn.vr168.interfacetest.util.SampleAssert;
-import cn.vr168.interfacetest.util.StudentExcelCreator;
+import cn.vr168.interfacetest.kit.util.SampleAssert;
+import cn.vr168.interfacetest.kit.excelCreator.StudentExcelCreator;
 
 @Data
 public class Clazz {

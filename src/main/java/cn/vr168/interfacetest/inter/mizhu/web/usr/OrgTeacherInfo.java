@@ -8,8 +8,7 @@ import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.testng.annotations.Test;
 import cn.vr168.interfacetest.parameter.people.Jigou;
-import cn.vr168.interfacetest.util.Body;
-import cn.vr168.interfacetest.util.SampleAssert;
+import cn.vr168.interfacetest.kit.util.SampleAssert;
 
 @RequiredArgsConstructor(staticName = "of")
 public class OrgTeacherInfo extends BasicsInterface {

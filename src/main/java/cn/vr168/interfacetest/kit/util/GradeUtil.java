@@ -1,7 +1,6 @@
-package cn.vr168.interfacetest.parameter;
+package cn.vr168.interfacetest.kit.util;
 
 import cn.hutool.json.JSONObject;
-import cn.vr168.interfacetest.util.JsonProperties;
 
 import java.util.ArrayList;
 import java.util.List;

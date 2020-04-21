@@ -2,14 +2,14 @@ package cn.vr168.interfacetest.parameter;
 
 import cn.hutool.core.date.DateTime;
 import cn.hutool.json.JSONObject;
+import cn.vr168.interfacetest.kit.factory.LessonFactory;
 import cn.vr168.interfacetest.inter.mizhu.web.classroom.Edit;
 import cn.vr168.interfacetest.inter.mizhu.web.classroom.SetTeacher;
 import cn.vr168.interfacetest.inter.mizhu.web.lesson.GetLessonInfoById;
-import cn.vr168.interfacetest.inter.mizhumanage.web.classroom.Delete;
 import lombok.Data;
 import cn.vr168.interfacetest.parameter.people.Teacher;
 import cn.vr168.interfacetest.parameter.people.User;
-import cn.vr168.interfacetest.util.SampleAssert;
+import cn.vr168.interfacetest.kit.util.SampleAssert;
 
 public class Classroom {
     private JSONObject data;
@@ -152,7 +152,7 @@ public class Classroom {
 
 
     public static void main(String[] args) {
-        LessonStore.creat().getClassRoom(0).setTeacher(Teacher.getInstance().getUserId());
+        LessonFactory.creat().getClassRoom(0).setTeacher(Teacher.getInstance().getUserId());
 
     }
 

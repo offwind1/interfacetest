@@ -1,4 +1,4 @@
-package cn.vr168.interfacetest.util.exception;
+package cn.vr168.interfacetest.kit.exception;
 
 public class TestException extends RuntimeException {
     public TestException() {

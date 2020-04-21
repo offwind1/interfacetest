@@ -10,9 +10,10 @@ import cn.vr168.interfacetest.inter.mizhumanage.web.classroom.Delete;
 import cn.vr168.interfacetest.inter.mizhumanage.web.lesson.LessonReply;
 import cn.vr168.interfacetest.parameter.people.Admin;
 import cn.vr168.interfacetest.parameter.people.Jigou;
+import cn.vr168.interfacetest.kit.util.GradeUtil;
 import lombok.Getter;
-import cn.vr168.interfacetest.util.Body;
-import cn.vr168.interfacetest.util.SampleAssert;
+import cn.vr168.interfacetest.kit.util.Body;
+import cn.vr168.interfacetest.kit.util.SampleAssert;
 
 import java.util.List;
 import java.util.stream.Collectors;

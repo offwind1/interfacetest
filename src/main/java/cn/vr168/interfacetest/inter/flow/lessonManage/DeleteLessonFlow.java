@@ -15,7 +15,7 @@ public class DeleteLessonFlow {
     /**
      * 课程删除后，再编辑添加课时，课时的顺序需要正确
      */
-    @Test
+    @Test(description = "课程删除后，再编辑添加课时，课时的顺序需要正确")
     public void test() {
         Lesson lesson = Lesson.builder().classroomCount(10).build();
         lesson.deleteClassrooms(3, 7);
@@ -29,7 +29,7 @@ public class DeleteLessonFlow {
      * 删除课时
      * *课时数量相同
      */
-    @Test
+    @Test(description = "删除课时后，课时显示的数量需要相同")
     public void test1() {
         int count = 4;
         Lesson lesson = Lesson.builder().classroomCount(count).build();

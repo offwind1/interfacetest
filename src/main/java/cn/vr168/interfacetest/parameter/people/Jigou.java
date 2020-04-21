@@ -4,7 +4,7 @@ import cn.hutool.json.JSONObject;
 import cn.vr168.interfacetest.config.Environment;
 import cn.vr168.interfacetest.inter.mizhu.web.usr.Login;
 import cn.vr168.interfacetest.inter.mizhu.web.usr.UsrOrgInfo;
-import cn.vr168.interfacetest.util.SampleAssert;
+import cn.vr168.interfacetest.kit.util.SampleAssert;
 
 public class Jigou extends User {
     private static Jigou single = null;

@@ -4,10 +4,7 @@ import cn.hutool.json.JSONObject;
 import cn.vr168.interfacetest.inter.BasicsInterface;
 import io.qameta.allure.Step;
 import lombok.RequiredArgsConstructor;
-import org.testng.annotations.Test;
-import cn.vr168.interfacetest.parameter.people.Jigou;
-import cn.vr168.interfacetest.util.Body;
-import cn.vr168.interfacetest.util.SampleAssert;
+import cn.vr168.interfacetest.kit.util.Body;
 
 @RequiredArgsConstructor(staticName = "of")
 public class JoinClassByFile extends BasicsInterface {

@@ -6,10 +6,10 @@ import io.qameta.allure.Step;
 import lombok.RequiredArgsConstructor;
 import org.testng.annotations.Test;
 import cn.vr168.interfacetest.parameter.Lesson;
-import cn.vr168.interfacetest.parameter.LessonStore;
+import cn.vr168.interfacetest.kit.factory.LessonFactory;
 import cn.vr168.interfacetest.parameter.people.Jigou;
-import cn.vr168.interfacetest.util.Body;
-import cn.vr168.interfacetest.util.SampleAssert;
+import cn.vr168.interfacetest.kit.util.Body;
+import cn.vr168.interfacetest.kit.util.SampleAssert;
 
 /**
  * 作业模块列表
@@ -27,7 +27,7 @@ public class GetWorkList extends BasicsInterface {
 
     @Test
     public void test() {
-        Lesson lesson = LessonStore.takeOut();
+        Lesson lesson = LessonFactory.takeOut();
         JSONObject object = getWorkList(Jigou.getInstance().getToken(), lesson.getLessonId());
         SampleAssert.assertResult0(object);
     }

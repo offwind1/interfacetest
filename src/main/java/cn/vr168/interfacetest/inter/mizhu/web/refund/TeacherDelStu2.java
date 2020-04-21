@@ -9,23 +9,23 @@ import cn.vr168.interfacetest.parameter.Lesson;
 import cn.vr168.interfacetest.parameter.people.HasToken;
 import cn.vr168.interfacetest.parameter.people.Jigou;
 import cn.vr168.interfacetest.parameter.people.Student;
-import cn.vr168.interfacetest.util.Body;
+import cn.vr168.interfacetest.kit.util.Body;
 
 @RequiredArgsConstructor(staticName = "of")
 public class TeacherDelStu2 extends BasicsInterface {
-    @Step
+
     public JSONObject teacherDelStu2(HasToken hasToken, String lessonId, String userIds) {
+        return teacherDelStu2(hasToken.getToken(), lessonId, userIds);
+    }
+
+    @Step
+    public JSONObject teacherDelStu2(String token, String lessonId, String userIds) {
         return post(Body.create()
-                .add("token", hasToken.getToken())
+                .add("token", token)
                 .add("lessonId", lessonId)
                 .add("userIds", userIds)
                 .build());
     }
-
-//    @BeforeClass
-//    public void before() {
-//        LessonUtil.getInstance().applyAndReply();
-//    }
 
     @Test(description = "正常调用")
     public void test() {

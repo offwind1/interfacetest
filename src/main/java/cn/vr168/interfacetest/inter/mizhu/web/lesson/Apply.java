@@ -7,10 +7,10 @@ import lombok.RequiredArgsConstructor;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import cn.vr168.interfacetest.parameter.Lesson;
-import cn.vr168.interfacetest.parameter.LessonStore;
+import cn.vr168.interfacetest.kit.factory.LessonFactory;
 import cn.vr168.interfacetest.parameter.people.HasToken;
 import cn.vr168.interfacetest.parameter.people.Jigou;
-import cn.vr168.interfacetest.util.Body;
+import cn.vr168.interfacetest.kit.util.Body;
 
 @RequiredArgsConstructor(staticName = "of")
 public class Apply extends BasicsInterface {
@@ -31,7 +31,7 @@ public class Apply extends BasicsInterface {
 
     @BeforeClass
     public void beforeClass() {
-        LessonStore.putIn(Lesson.builder(Jigou.getInstance().getToken()).build());
+        LessonFactory.putIn(Lesson.builder(Jigou.getInstance().getToken()).build());
     }
 
     @Test(description = "正常")

@@ -8,10 +8,10 @@ import groovy.lang.Tuple2;
 import cn.vr168.interfacetest.inter.mizhu.web.item.*;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
-import cn.vr168.interfacetest.parameter.LessonStore;
+import cn.vr168.interfacetest.kit.factory.LessonFactory;
 import cn.vr168.interfacetest.parameter.people.Jigou;
 import cn.vr168.interfacetest.parameter.people.Student;
-import cn.vr168.interfacetest.util.SampleAssert;
+import cn.vr168.interfacetest.kit.util.SampleAssert;
 
 import java.util.*;
 import java.util.List;
@@ -33,7 +33,7 @@ public class BasicItemFlow {
     public void test() {
         int count = 4;
         List<String> lessons = new ArrayList<>();
-        List<Lesson> list = LessonStore.lessonList();
+        List<Lesson> list = LessonFactory.lessonList();
 
         for (Lesson lesson: RandomUtil.randomEles(list, count)){
             lessons.add(lesson.getLessonId());
