@@ -19,6 +19,7 @@ public class ConfigUtil {
         }
     }
 
+
     public static String getValue(String key) {
         return properties.getProperty(key);
     }
