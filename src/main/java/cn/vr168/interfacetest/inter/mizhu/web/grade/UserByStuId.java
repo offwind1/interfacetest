@@ -27,7 +27,6 @@ public class UserByStuId extends BasicsInterface {
                 .build());
     }
 
-
     @Test
     public void test() {
         JSONObject object = ClassList.of().classList(Jigou.getInstance().getToken(), Jigou.getInstance().getOrgName());

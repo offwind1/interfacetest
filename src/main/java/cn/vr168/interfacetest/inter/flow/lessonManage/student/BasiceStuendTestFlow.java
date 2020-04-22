@@ -4,6 +4,7 @@ import cn.hutool.http.HttpResponse;
 import cn.hutool.json.JSONObject;
 import cn.vr168.interfacetest.inter.mizhu.api.classChart.ExportByStudent;
 import cn.vr168.interfacetest.inter.mizhu.api.lessonInfo.LessonInfo;
+import cn.vr168.interfacetest.inter.mizhu.api.lessonInfo.MyLessonPC;
 import cn.vr168.interfacetest.inter.mizhu.web.classroom.ClassroomOption;
 import cn.vr168.interfacetest.inter.mizhu.web.lesson.AddTeacherStudent;
 import cn.vr168.interfacetest.inter.mizhu.web.refund.TeacherDelStu2;
@@ -25,6 +26,7 @@ import org.testng.annotations.Test;
 
 import java.io.IOException;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -118,6 +120,30 @@ public class BasiceStuendTestFlow {
 
         assert set.size() == 1;
         assert set.contains("baby0001");
+    }
+
+
+    @Test(dependsOnMethods = {"addStudent", "addStudentOnly", "delStudentOnly"})
+    public void checkStudentHasLesson() throws IOException {
+        lesson.applied();
+
+        Student student = new Student("baby0001", "111111");
+        JSONObject myLesson = MyLessonPC.of().myLessonPC(MyLessonPC.Bean.builder()
+                .token(student.getToken())
+                .userId(student.getUserId())
+                .lessonName("")
+                .lessonTerm("1")
+                .build());
+        /*
+        TODO 检查学生是否拥有了课程
+         */
+
+        List<String> list = myLesson.getJSONObject("data").getJSONArray("lessonInfoList").stream().map(i -> {
+            JSONObject o = (JSONObject) i;
+            return o.getStr("lessonId");
+        }).collect(Collectors.toList());
+
+        assert list.contains(lesson.getLessonId()) : "学生没有这堂课程";
     }
 
 

@@ -102,8 +102,8 @@ public class AddLessonFlow {
             //课时名称
             assert o.getStr("classroomName").equals("课时" + String.valueOf(i + 1)) : "课时名称不正确";
             //课时时间
-            assert o.getStr("startTime").equals(DateUtil.offsetDay(lesson.getStartDate(), i).toString("yyyy-MM-dd hh:mm:" + "00")) : "开课时间不正确";
-            assert o.getStr("factStartTime").equals(DateUtil.offsetDay(lesson.getStartDate(), i).toString("yyyy-MM-dd hh:mm:" + "00")) : "开课时间不正确";
+            assert o.getStr("startTime").equals(DateUtil.offsetDay(lesson.getStartDate(), i).toString("yyyy-MM-dd HH:mm:" + "00")) : "开课时间不正确";
+            assert o.getStr("factStartTime").equals(DateUtil.offsetDay(lesson.getStartDate(), i).toString("yyyy-MM-dd HH:mm:" + "00")) : "开课时间不正确";
             //教师
             assert o.getStr("teacherPhone").equals(lesson.getTeacherPhone()) : "教师手机号不正确";
 

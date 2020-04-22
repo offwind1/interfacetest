@@ -1,5 +1,6 @@
 package cn.vr168.interfacetest.inter;
 
+import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.http.HttpRequest;
 import cn.hutool.http.HttpResponse;
 import cn.hutool.json.JSONObject;
@@ -39,18 +40,21 @@ public abstract class BasicsInterface {
     public HttpResponse get(HttpRequest request) {
         log.debug("——————————————————————————————————————————————————");
         log.debug("url:" + getUrl());
-        log.debug("body:" + request.form());
-//        Allure.addAttachment("url", getUrl());
-//        Allure.addAttachment("body", request.form().toString());
-        Allure.addAttachment("request:" + getUrl(), request.form().toString());
-
-        HttpResponse response = request.execute();
-//        log.debug("Status:" + response.getStatus());
-//        log.debug("response:" + response.body());
-//        Allure.addAttachment("Status", String.valueOf(response.getStatus()));
-//        Allure.addAttachment("response", response.body());
-        return response;
+        if (ObjectUtil.isNotNull(request.form())) {
+            log.debug("body:" + request.form());
+            Allure.addAttachment("request:" + getUrl(), request.form().toString());
+        }
+        return request.execute();
     }
+
+    public JSONObject getJson(HttpRequest request) {
+        HttpResponse response = get(request);
+        log.debug("Status:" + response.getStatus());
+        log.debug("response:" + response.body());
+        Allure.addAttachment("response", response.body());
+        return JSONUtil.parseObj(response.body());
+    }
+
 
     public JSONObject post(Map<String, Object> body) {
         log.debug("——————————————————————————————————————————————————");
