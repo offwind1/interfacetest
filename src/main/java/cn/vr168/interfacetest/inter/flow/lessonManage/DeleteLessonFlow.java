@@ -35,8 +35,8 @@ public class DeleteLessonFlow {
         Lesson lesson = Lesson.builder().classroomCount(count).build();
         lesson.applied();
         lesson.deleteClassroom(RandomUtil.randomInt(count));
-
         Lesson nowLesson = new Lesson(Jigou.getInstance().getToken(), lesson.getLessonId());
+
         assert nowLesson.getClassroomCount() == nowLesson.getClassrooms().size() : "标记的课时数和真正存在的课程数量不一致";
     }
 

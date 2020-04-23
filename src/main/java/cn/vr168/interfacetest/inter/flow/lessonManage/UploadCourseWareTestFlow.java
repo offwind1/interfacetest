@@ -46,22 +46,22 @@ public class UploadCourseWareTestFlow {
     }
 
     private String[][] strings = {
-            {"动图.gif", "7"},
-            {"压缩包.rar", "14"},
-            {"压缩包.zip", "14"},
-            {"图片.jpg", "7"},
-            {"图片.png", "7"},
-            {"声音.mp3", "12"},
-            {"文档.doc", "9"},
-            {"文档.docx", "9"},
-            {"演示文稿.ppt", "9"},
-            {"演示文稿.pptx", "9"},
-            {"表格.xls", "9"},
-            {"表格.xlsx", "9"},
-            {"视频.flv", "3"},
-            {"视频.mov", "3"},
-            {"视频.mp4", "3"},
-            {"文档.pdf", "13"},
+            {"动图.gif", "7", "dongtu.gif"},
+            {"压缩包.rar", "14", "yasuobao.rar"},
+            {"压缩包.zip", "14", "yasuobao.zip"},
+            {"图片.jpg", "7", "tupian.jpg"},
+            {"图片.png", "7", "tupian.png"},
+            {"声音.mp3", "12", "shengying.mp3"},
+            {"文档.doc", "9", "wendang.doc"},
+            {"文档.docx", "9", "wendang.docx"},
+            {"演示文稿.ppt", "9", "yanshiwendang.ppt"},
+            {"演示文稿.pptx", "9", "yanshiwendang.pptx"},
+            {"表格.xls", "9", "biaoge.xls"},
+            {"表格.xlsx", "9", "biaoge.xlsx"},
+            {"视频.flv", "3", "shiping.flv"},
+            {"视频.mov", "3", "shiping.mov"},
+            {"视频.mp4", "3", "shiping.mp4"},
+            {"文档.pdf", "13", "wendang.pdf"},
     };
 
 
@@ -69,15 +69,15 @@ public class UploadCourseWareTestFlow {
     public void test() {
         List<String> list = new ArrayList<>();
         for (String[] file : strings) {
-            JSONObject uptoken = GetUptoken.of().getUptoken(token, file[0], file[1]);
+            JSONObject uptoken = GetUptoken.of().getUptoken(token, file[2], file[1]);
             String qiniu_token = uptoken.getJSONObject("data").getStr("uptoken");
-            upload(qiniu_token, file[0]);
+            upload(qiniu_token, file);
 
             JSONObject object = UploadFile2.of().uploadFile2(UploadFile2.Bean.builder()
                     .lessonId(lesson.getLessonId())
                     .classroomId(lesson.getClassRoom(0).getClassroomId())
                     .coursewareType(file[1])
-                    .sourceUrl("http://images.mizholdings.com/" + file[0])
+                    .sourceUrl("http://images.mizholdings.com/" + file[2])
                     .coursewareName(file[0])
                     .token(token)
                     .build());
@@ -86,7 +86,6 @@ public class UploadCourseWareTestFlow {
             list.add(coursewareId);
         }
 
-//        JSONObject coursewareInfo = CoursewareInfo.of().coursewareInfo(token, lesson.getClassRoom(0).getClassroomId());
         JSONObject optionList = OptionList.of().optionList(token, lesson.getClassRoom(0).getClassroomId());
         Set<String> set = optionList.getJSONObject("data").getJSONArray("optionList").stream().map(i -> {
             JSONObject o = (JSONObject) i;
@@ -98,15 +97,15 @@ public class UploadCourseWareTestFlow {
     }
 
 
-    private void upload(String qiniu_token, String key) {
-        byte[] array = ResourcesUtil.getCourse(key);
+    private void upload(String qiniu_token, String[] file) {
+        byte[] array = ResourcesUtil.getCourse(file[0]);
 
         HttpRequest request = HttpRequest.post("https://upload-z2.qiniup.com/");
         request = request.form("token", qiniu_token)
-                .form("key", key)
-                .form("x:filename", key)
+                .form("key", file[2])
+                .form("x:filename", file[2])
                 .form("x:size", array.length)
-                .form("file", array, key);
+                .form("file", array, file[2]);
 
         HttpResponse response = request.execute();
         System.out.println(response.body());

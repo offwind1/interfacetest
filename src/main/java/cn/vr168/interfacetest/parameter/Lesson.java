@@ -30,7 +30,6 @@ public class Lesson {
         updateLessonInfo();
     }
 
-
     /*
     ### setter
      */
@@ -43,6 +42,18 @@ public class Lesson {
     public void setTeacher(String userId) {
         for (Classroom classRoom : getClassrooms()) {
             classRoom.setTeacher(userId);
+        }
+        updateLessonInfo();
+    }
+
+    /**
+     * 设置助教老师
+     *
+     * @param userId 用户id
+     */
+    public void setSupportTeacher(String userId) {
+        for (Classroom classRoom : getClassrooms()) {
+            classRoom.setSupportTeacher(userId);
         }
         updateLessonInfo();
     }
@@ -136,15 +147,16 @@ public class Lesson {
      * @param index
      */
     public void deleteClassroom(Integer index) {
-        Delete.of().delete(token, getClassRoom(index).getClassroomId());
-        data.getJSONObject("data").getJSONArray("classroomList").remove(index);
+        Delete.of().delete(token, getClassRoom(index).getClassroomId(), lessonId);
+//        data.getJSONObject("data").getJSONArray("classroomList").remove(index);
+        updateLessonInfo();
     }
 
     public void deleteClassrooms(int fromIndex, int toIndex) {
         String classroomIds = getClassrooms().subList(fromIndex, toIndex).stream().map(Classroom::getClassroomId)
                 .collect(Collectors.joining(","));
         System.out.println("classroomIds：" + classroomIds);
-        SampleAssert.assertCode200(Delete.of().delete(token, classroomIds));
+        SampleAssert.assertCode200(Delete.of().delete(token, classroomIds, lessonId));
         updateLessonInfo();
     }
 

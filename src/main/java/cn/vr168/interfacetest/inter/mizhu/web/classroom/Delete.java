@@ -10,15 +10,16 @@ import lombok.RequiredArgsConstructor;
 public class Delete extends BasicsInterface {
 
     @Step
-    public JSONObject delete(String token, String classroomIds) {
+    public JSONObject delete(String token, String classroomIds, String lessonId) {
         return post(Body.create()
                 .add("token", token)
                 .add("classroomIds", classroomIds)
+                .add("lessonId", lessonId)
                 .build());
     }
 
     @Override
     public String route() {
-        return "mizhumanage/web/classroom/delete";
+        return "mizhu/web/classroom/delete";
     }
 }
