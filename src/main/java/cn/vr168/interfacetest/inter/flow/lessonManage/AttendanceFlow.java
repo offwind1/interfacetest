@@ -13,6 +13,7 @@ import cn.vr168.interfacetest.inter.mizhu.web.grade.AddClass;
 import cn.vr168.interfacetest.inter.mizhu.web.grade.DelClass;
 import cn.vr168.interfacetest.inter.mizhu.web.lesson.JoinClassByFile;
 import cn.vr168.interfacetest.inter.mizhu.web.lesson.UploadFile;
+import cn.vr168.interfacetest.kit.excelCreator.ExcelCreator;
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
@@ -36,7 +37,7 @@ import java.util.*;
 public class AttendanceFlow {
 
     private User user = Jigou.getInstance();
-    private Lesson lesson = Lesson.builder(user.getToken()).classroomCount(3).build();
+    private Lesson lesson;
     private String className = "班级" + RandomUtil.randomString(6);
     private String nameFormat = "新生娃%04d";
     private String accountFormat = "baby%04d";
@@ -48,6 +49,7 @@ public class AttendanceFlow {
     private String classroomCode;
 
     private void init() throws InterruptedException {
+        lesson = Lesson.builder(user.getToken()).classroomCount(3).build();
         addStudent();
 
         //创建课程

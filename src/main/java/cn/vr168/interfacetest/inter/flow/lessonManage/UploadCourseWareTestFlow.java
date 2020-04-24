@@ -96,7 +96,6 @@ public class UploadCourseWareTestFlow {
 
     }
 
-
     private void upload(String qiniu_token, String[] file) {
         byte[] array = ResourcesUtil.getCourse(file[0]);
 

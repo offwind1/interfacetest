@@ -146,7 +146,7 @@ public class BasicAnswerFlow {
      */
     @Test
     public void test2() {
-        Lesson lesson = LessonFactory.creat();                            //创建课程
+        Lesson lesson = Lesson.builder().lessonName("答题卡测试" + RandomUtil.randomString(6)).build();                            //创建课程
         clazz = ClassFactory.findClass("答题卡专用");                        //创建班级
         String accountFormat = "baby%04d";
         String nameFormat = "新生娃%04d";
