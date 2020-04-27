@@ -186,9 +186,9 @@ public class BasicAnswerFlow {
         lesson.addClass(ClassFactory.findClass("答题卡专用").getStuId());
         AnswerCard answerCard = AnswerCardFactory.creatCard(lesson);
         Student student = new Student("baby0001", "111111");
+
+        //学生领取答题卡
         AnswerCard studentCard = getStudentAnswerCardCheck(student, answerCard, null);
-//        submitAnswerCardCheck(student, studentCard); // 提交答题卡
-        saveAnswerCardCheck(student, studentCard); // 保存答题卡
 
         //修改答题卡
         AddAnswerCard.Bean bean = AddAnswerCard.Bean.builder()
@@ -201,7 +201,7 @@ public class BasicAnswerFlow {
                 .build();
 
         JSONObject updateAnswerCard = UpdateAnswerCard.of().updateAnswerCard(bean, answerCard.getAnswerCardId());
-        SampleAssert.assertMsg(updateAnswerCard, "已经有学生提交答案，本答题卡不允许修改");
+        SampleAssert.assertMsg(updateAnswerCard, "已经有学生领取答题卡，本答题卡不允许修改");
     }
 
 
